@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
@@ -47,7 +48,7 @@ code {
   margin: auto;
   gap: 20px;
   justify-content: center;
-  padding: 40px 0 80px 0;
+  padding: 20px 0 80px 0;
 }
 
 .nav{
@@ -65,5 +66,11 @@ code {
 .searchBar{
   width: 50%;
   height: 60%;
-  padding: 0 15px;
+  display: flex;
+  gap: 5px;
+}
+
+.searchBar input{
+  flex: 2;
+  padding: 0 10px;
 }
