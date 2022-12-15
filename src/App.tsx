@@ -31,7 +31,7 @@ const App: React.FC = () => {
       setTimeout(() => {
         setPhotos(item);
         setLoading(true);
-      }, 600)
+      }, 800)
     })
   }, [])
 
@@ -50,10 +50,8 @@ const App: React.FC = () => {
     }
     void getImages().then((images) => {
       const item = images.photos
-      setTimeout(() => {
-        setPhotos(item)
-        setLoading(true)
-      }, 600)
+      setPhotos(item);
+      setLoading(true);
     })
   }
 
@@ -77,18 +75,20 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="App">
-       <div className="nav">
-          <div className="searchBar">
-          <input type="text" ref={searchRef} placeholder="Search Here" />
-          <button onClick={searchHandle}><SearchIcon /></button>
-          </div>
-       </div>
-      {loading ? (<Dashboard value = { photos }/>) : (<Loader />)}
-      <div className="footer">
-        <Pagination className="pagination" count={10} color="primary" onChange={handlePageChange} page={pageNo}/>
+    <>
+      <div className="App">
+        <div className="nav">
+            <div className="searchBar">
+            <input type="text" ref={searchRef} placeholder="Search Here" />
+            <button onClick={searchHandle}><SearchIcon /></button>
+            </div>
+        </div>
+        {loading ? (<Dashboard value = { photos } />) : (<Loader />)}
+        <div className="footer">
+          <Pagination className="pagination" count={10} color="primary" onChange={handlePageChange} page={pageNo}/>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

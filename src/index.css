@@ -18,6 +18,7 @@ code {
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
+  z-index: -999;
 }
 
 .pagination{
@@ -31,22 +32,23 @@ code {
   bottom: 0px;
   background: white;
   width: 100vw;
+  z-index: 99;
 }
 
 .image{
   width: 250px;
   height: 300px;
+  z-index: 999;
 }
 
 .dashboard{
   position: relative;
   top: 50px;
-  z-index: -1;
+  z-index: 9;
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  width: 80%;
   margin: auto;
-  gap: 20px;
   justify-content: center;
   padding: 20px 0 80px 0;
 }
@@ -60,7 +62,7 @@ code {
   height: 50px;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 10;
 }
 
 .searchBar{
@@ -81,4 +83,25 @@ code {
   left:50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+}
+
+.download_btn{
+  width: 10px !important;
+  height: 10px !important;
+  position: relative !important;
+  top: -18px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.download_btn_icon{
+  background: white;
+  color: green;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.card_wrapper{
+  margin: 5px 0px;
 }
