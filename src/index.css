@@ -19,6 +19,12 @@ code {
   height: 100vh;
   overflow-y: auto;
   z-index: -999;
+  background-color: #1c1c1c;
+  min-width: 350px;
+}
+
+.lightMode{
+  background-color: #ffffff;
 }
 
 .pagination{
@@ -65,11 +71,21 @@ code {
   z-index: 10;
 }
 
+.switch{
+  position: fixed;
+  /* right: 10px; */
+  right: -20%;
+}
+
 .searchBar{
   width: 50%;
   height: 60%;
   display: flex;
   gap: 5px;
+}
+
+.searchBar button{
+  cursor: pointer;
 }
 
 .searchBar input{
@@ -88,11 +104,16 @@ code {
 .download_btn{
   width: 10px ;
   height: 10px ;
-  position: relative;
+  position: absolute;
   top: -18px;
   right: 30px;
   cursor: pointer;
   z-index: 999;
+  visibility: hidden;
+}
+
+.visibleBtn{
+  visibility: visible;
 }
 
 .download_btn_icon{

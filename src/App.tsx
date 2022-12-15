@@ -4,6 +4,7 @@ import Dashboard from './Component/Dashboard'
 import fetchData from './Helper/fetch'
 import SearchIcon from '@mui/icons-material/Search';
 import Loader from './Component/Loader';
+import Switch from '@mui/material/Switch';
 
 export interface fetchedArray {
   id: number
@@ -19,6 +20,7 @@ const App: React.FC = () => {
   const searchRef = useRef<HTMLInputElement>(null)
   const [loading, setLoading] = useState(false);
   const [pageNo, setPageNo] = useState(1);
+  const [classList, setClassList] = useState('App');
 
   useEffect(() => {
     setPageNo(1);
@@ -37,6 +39,7 @@ const App: React.FC = () => {
 
   const handlePageChange: (event: React.ChangeEvent<unknown>, page: number) => void = (event, page) => {
     setPageNo(page);
+    setLoading(false);
     const getImages = async () => {
       const query = searchRef.current?.value
       console.log(query);
@@ -50,13 +53,16 @@ const App: React.FC = () => {
     }
     void getImages().then((images) => {
       const item = images.photos
-      setPhotos(item);
-      setLoading(true);
+      setTimeout(() => {
+        setPhotos(item);
+        setLoading(true);
+      }, 800)
     })
   }
 
   const searchHandle: (e: React.MouseEvent<HTMLElement>) => void = (e) => {
     setPageNo(1);
+    setLoading(false);
     const getImages = async () => {
       const query = searchRef.current?.value;
       if (query !== undefined) {
@@ -69,19 +75,30 @@ const App: React.FC = () => {
     }
     void getImages().then((images) => {
       const item = images.photos
-      console.log(item);
-      setPhotos(item)
+      setTimeout(() => {
+        setPhotos(item);
+        setLoading(true);
+      }, 800)
     })
+  }
+
+  const changeClassList = () => {
+    if (classList === 'App') {
+      setClassList('App lightMode')
+    } else {
+      setClassList('App')
+    }
   }
 
   return (
     <>
-      <div className="App">
+      <div className={classList}>
         <div className="nav">
             <div className="searchBar">
-            <input type="text" ref={searchRef} placeholder="Search Here" />
-            <button onClick={searchHandle}><SearchIcon /></button>
+              <input type="text" ref={searchRef} placeholder="Search Here" />
+              <button onClick={searchHandle}><SearchIcon /></button>
             </div>
+            <Switch defaultChecked className='switch' onClick={changeClassList}/>
         </div>
         {loading ? (<Dashboard value = { photos } />) : (<Loader />)}
         <div className="footer">
