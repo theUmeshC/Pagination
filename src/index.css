@@ -86,9 +86,9 @@ code {
 }
 
 .download_btn{
-  width: 10px !important;
-  height: 10px !important;
-  position: relative !important;
+  width: 10px ;
+  height: 10px ;
+  position: relative;
   top: -18px;
   right: 30px;
   cursor: pointer;
