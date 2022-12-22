@@ -1,4 +1,4 @@
-# Welcome to Shopify App
+# Welcome to PhotoGalley App
 
 This is a single page react App PhotoGallery App ✌
 
