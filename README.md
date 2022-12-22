@@ -56,7 +56,7 @@ https://www.pexels.com/api/documentation/
 ```
 ## 🔗 Link to Visit the App 
 
-[![PhotoGallery](https://img.shields.io/badge/Shopify-000?style=for-the-badge&logo=ko-fi&logoColor=blue)](https://photo-gallery-f0cd5.web.app/)
+[![PhotoGallery](https://img.shields.io/badge/PhotoGalley-000?style=for-the-badge&logo=ko-fi&logoColor=blue)](https://photo-gallery-f0cd5.web.app/)
 
 ## Below you can find the project sample images
 
